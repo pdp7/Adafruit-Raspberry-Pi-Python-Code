@@ -54,7 +54,7 @@ class Adafruit_CharLCD:
 
 
 
-    def __init__(self, pin_rs=25, pin_e=24, pins_db=[23, 17, 21, 22], GPIO = None):
+    def __init__(self, pin_rs=22, pin_e=18, pins_db=[16, 11, 13, 15], GPIO = None):
 	# Emulate the old behavior of using RPi.GPIO if we haven't been given
 	# an explicit GPIO interface to use
 	if not GPIO:
@@ -64,7 +64,7 @@ class Adafruit_CharLCD:
         self.pin_e = pin_e
         self.pins_db = pins_db
 
-        self.GPIO.setmode(GPIO.BCM)
+        self.GPIO.setmode(GPIO.BOARD)
         self.GPIO.setup(self.pin_e, GPIO.OUT)
         self.GPIO.setup(self.pin_rs, GPIO.OUT)
 
