@@ -60,6 +60,7 @@ class Adafruit_CharLCD:
 	if not GPIO:
 	    import RPi.GPIO as GPIO
    	self.GPIO = GPIO
+        self.GPIO.setwarnings(False)
         self.pin_rs = pin_rs
         self.pin_e = pin_e
         self.pins_db = pins_db
